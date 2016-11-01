@@ -39,14 +39,12 @@ var PFD = {
 
 
 		foreach(var key; svg_keys) {
-			print(key);
 			m[key] = nil;
 			m[key] = pfd.getElementById(key);
 			m[key].updateCenter();
 			m[key].trans	= m[key].createTransform();
 			m[key].rot		= m[key].createTransform();
 			#m[key].hide();
-
 		};
 
 
@@ -86,7 +84,7 @@ var PFD = {
 		foreach(var type; [r('TFC'), r('APS')] )
 			m.MAPd.addLayer(factory: canvas.SymbolLayer, type_arg: type.name, visible: type.vis, priority: type.zindex,);
 		m.MAPd.set("clip", "rect(493, 1011, 709, 711).setRotation(45+D2R,[0,0])");
-		#m.MAPd.hide();
+		m.MAPd.hide();
 
 		return m
 	},
@@ -560,5 +558,4 @@ var PFD = {
 			#close map
 		}
 	},
-
 };

@@ -3,14 +3,14 @@
 #
 
 
-var GRS77 {
-    var GyroMeasError = math.pi * (40.0f / 180.0f)     # gyroscope measurement error in rads/s (shown as 3 deg/s)
-    var GyroMeasDrift = math.pi * (0.0f / 180.0f)      # gyroscope measurement drift in rad/s/s (shown as 0.0 deg/s/s)
+var GRS77 = {
+    var GyroMeasError = math.pi * (40.0 / 180.0);     # gyroscope measurement error in rads/s (shown as 3 deg/s)
+    var GyroMeasDrift = math.pi * (0.0 / 180.0);      # gyroscope measurement drift in rad/s/s (shown as 0.0 deg/s/s)
 
     var beta = math.sqrt(3.0 / 4.0) * GyroMeasError;
     var zeta = math.sqrt(3.0 / 4.0) * GyroMeasDrift;
-    var Kp 2.0 * 5.0;
-    var Ki 0.0;
+    var Kp = 2.0 * 5.0;
+    var Ki = 0.0;
 
     var deltat = 0.0;
     var lastUpdate = 0;
