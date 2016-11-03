@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="PFD.svg"
-   inkscape:version="0.91 r"
+   sodipodi:docname="PFD_2016_11_02.svg"
+   inkscape:version="0.91 r13725"
    version="1.1"
    id="svg3140"
    height="768"
@@ -24,18 +24,18 @@
      borderopacity="1"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="419.16299"
-     inkscape:cy="407.09067"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="157.12674"
+     inkscape:cy="585.08057"
      inkscape:document-units="px"
      inkscape:current-layer="layer29"
      showgrid="false"
      showguides="false"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1920"
-     inkscape:window-height="1005"
-     inkscape:window-x="1680"
-     inkscape:window-y="24"
+     inkscape:window-width="1918"
+     inkscape:window-height="1078"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-grids="true"
      inkscape:snap-to-guides="true"
@@ -324,7 +324,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -342,13 +342,13 @@
        inkscape:groupmode="layer"
        inkscape:label="Laag 1">
       <image
-         sodipodi:absref="/home/jean-paul/fgfs/Farmin/G1000/Pages/PFD/../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd.png"
+         sodipodi:absref="/mnt/merope/flightgear/Aircraft_xmw/Instruments-3d/Farmin/G1000/Pages/PFD/../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd.png"
          xlink:href="../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd.png"
-         width="1026"
-         height="768"
-         id="image3156"
+         y="284.36218"
          x="-1.0000001"
-         y="284.36218" />
+         id="image3156"
+         height="768"
+         width="1026" />
     </g>
     <g
        inkscape:groupmode="layer"
@@ -357,14 +357,14 @@
        style="display:none"
        sodipodi:insensitive="true">
       <image
-         sodipodi:absref="/home/jean-paul/fgfs/Farmin/G1000/Pages/PFD/../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd2.png"
+         sodipodi:absref="/mnt/merope/flightgear/Aircraft_xmw/Instruments-3d/Farmin/G1000/Pages/PFD/../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd2.png"
          xlink:href="../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd2.png"
-         y="-5.6843419e-14"
-         x="0"
-         id="image4375"
-         preserveAspectRatio="none"
+         width="1024"
          height="768"
-         width="1024" />
+         preserveAspectRatio="none"
+         id="image4375"
+         x="0"
+         y="-5.6843419e-14" />
     </g>
     <g
        inkscape:groupmode="layer"
@@ -398,14 +398,14 @@
        style="display:none;opacity:1"
        sodipodi:insensitive="true">
       <image
-         sodipodi:absref="/home/jean-paul/fgfs/Farmin/G1000/Pages/PFD/../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd4.png"
+         sodipodi:absref="/mnt/merope/flightgear/Aircraft_xmw/Instruments-3d/Farmin/G1000/Pages/PFD/../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd4.png"
          xlink:href="../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd4.png"
-         y="2.8421709e-14"
-         x="0"
-         id="image4526"
-         preserveAspectRatio="none"
+         width="1024"
          height="768"
-         width="1024" />
+         preserveAspectRatio="none"
+         id="image4526"
+         x="0"
+         y="2.8421709e-14" />
     </g>
     <g
        inkscape:groupmode="layer"
@@ -7004,13 +7004,6 @@
        inkscape:label="#rect6017" />
     <rect
        style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect6067"
-       width="84"
-       height="26"
-       x="275.5"
-       y="427.5" />
-    <rect
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect6069"
        width="84"
        height="26"
@@ -7138,7 +7131,137 @@
   <g
      inkscape:groupmode="layer"
      id="layer29"
-     inkscape:label="maps" />
+     inkscape:label="maps">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+       x="204.67491"
+       y="406.49036"
+       id="TAS"
+       sodipodi:linespacing="125%"
+       transform="scale(0.85708105,1.1667508)"
+       inkscape:label="#text4109-6"><tspan
+         sodipodi:role="line"
+         id="tspan4111-3"
+         x="204.67491"
+         y="406.49036"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle">TAS</tspan></text>
+    <rect
+       style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6067"
+       width="84"
+       height="26"
+       x="275.5"
+       y="427.5" />
+    <g
+       id="g5631">
+      <text
+         inkscape:label="#text4109"
+         transform="scale(0.85708105,1.1667508)"
+         sodipodi:linespacing="125%"
+         id="HDG"
+         y="383.66058"
+         x="345.43521"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           y="383.66058"
+           x="345.43521"
+           id="tspan4111"
+           sodipodi:role="line">HDG</tspan></text>
+      <text
+         inkscape:label="#text4109-9"
+         transform="scale(0.85708105,1.1667508)"
+         sodipodi:linespacing="125%"
+         id="HDGVAL"
+         y="384.73187"
+         x="394.00571"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#00ffff;fill-opacity:1;stroke:none"
+         xml:space="preserve"><title
+           id="title4754-4">HDG</title><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#00ffff;fill-opacity:1"
+           y="384.73187"
+           x="394.00571"
+           id="tspan4111-2-8"
+           sodipodi:role="line">000</tspan></text>
+    </g>
+    <g
+       transform="translate(285.24909,0.0059833)"
+       id="g5631-4">
+      <text
+         inkscape:label="#text4109"
+         transform="scale(0.85708105,1.1667508)"
+         sodipodi:linespacing="125%"
+         id="CRS"
+         y="383.66058"
+         x="345.43521"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17.5px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#ffffff;fill-opacity:1;stroke:none"
+         xml:space="preserve"><tspan
+           y="383.66058"
+           x="345.43521"
+           id="tspan4111-6"
+           sodipodi:role="line">CRS</tspan></text>
+      <text
+         inkscape:label="#text4109-9"
+         transform="scale(0.85708105,1.1667508)"
+         sodipodi:linespacing="125%"
+         id="CRSVAL"
+         y="384.73187"
+         x="394.00571"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#00ffff;fill-opacity:1;stroke:none"
+         xml:space="preserve"><title
+           id="title4754-4-1">HDG</title><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#00ffff;fill-opacity:1"
+           y="384.73187"
+           x="394.00571"
+           id="tspan4111-2-8-7"
+           sodipodi:role="line">000</tspan></text>
+      <text
+         inkscape:label="#text4109-9"
+         transform="scale(0.85708105,1.1667508)"
+         sodipodi:linespacing="125%"
+         id="QNHVAL"
+         y="408.97375"
+         x="549.21088"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#00ffff;fill-opacity:1;stroke:none"
+         xml:space="preserve"><title
+           id="title4754-4-1-1">HDG</title><tspan
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#00ffff;fill-opacity:1"
+           y="408.97375"
+           x="549.21088"
+           id="tspan4111-2-8-7-8"
+           sodipodi:role="line">29.92 inHG</tspan></text>
+    </g>
+    <text
+       inkscape:label="#text4109-9"
+       transform="scale(0.85708105,1.1667508)"
+       sodipodi:linespacing="125%"
+       id="ALTTGTVAL"
+       y="91.106834"
+       x="879.96289"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#00ffff;fill-opacity:1;stroke:none"
+       xml:space="preserve"><title
+         id="title4754-4-1-8">HDG</title><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#00ffff;fill-opacity:1"
+         y="91.106834"
+         x="879.96289"
+         id="tspan4111-2-8-7-88"
+         sodipodi:role="line">10000</tspan></text>
+    <text
+       inkscape:label="#text4109-9"
+       transform="scale(0.85708105,1.1667508)"
+       sodipodi:linespacing="125%"
+       id="KASTGTVAL"
+       y="93.531021"
+       x="228.19916"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#00ffff;fill-opacity:1;stroke:none"
+       xml:space="preserve"><title
+         id="title4754-4-1-7">HDG</title><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#00ffff;fill-opacity:1"
+         y="93.531021"
+         x="228.19916"
+         id="tspan4111-2-8-7-5"
+         sodipodi:role="line">000</tspan></text>
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer17"
@@ -7516,6 +7639,21 @@
            x="767.07422"
            y="605.43359">NO GPS POSITION</tspan></text>
     </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Normal';text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;display:inline;fill:#00ffff;fill-opacity:1;stroke:none"
+       x="252.70399"
+       y="407.54169"
+       id="TASVAL"
+       sodipodi:linespacing="125%"
+       transform="scale(0.85708105,1.1667508)"
+       inkscape:label="#text4109-9"><title
+         id="title4754">HDG</title><tspan
+         sodipodi:role="line"
+         id="tspan4111-2"
+         x="252.70399"
+         y="407.54169"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:20.95249939px;line-height:125%;font-family:Sans;-inkscape-font-specification:'Sans, Bold';text-align:center;writing-mode:lr-tb;text-anchor:middle;fill:#00ffff;fill-opacity:1">000</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
