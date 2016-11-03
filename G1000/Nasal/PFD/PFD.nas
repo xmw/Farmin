@@ -14,7 +14,7 @@ var PFD = {
 				return "LiberationFonts/LiberationSans-Regular.ttf";
 
 		}
-		canvas.parsesvg(pfd, "Aircraft/Instruments-3d/Farmin/G1000/Pages/PFD/PFD.svg", {'font-mapper': font_mapper});
+		canvas.parsesvg(m.pfd, "Aircraft/Instruments-3d/Farmin/G1000/Pages/PFD/PFD.svg", {'font-mapper': font_mapper});
 		var Speed = {};
 
 		var svg_keys = ["Horizon","bankPointer","bankPointerLineL",
