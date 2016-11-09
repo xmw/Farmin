@@ -679,6 +679,19 @@
     <type>pick</type>
     <object-name>CRS</object-name>
     <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>screen1.CRS.button.down();</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>nasal</command>
+          <script>screen1.CRS.button.Up();</script>
+        </binding>
+      </mod-up>
+    </action>
+    <action>
       <button>3</button>
       <binding>
        <command>nasal</command>
@@ -697,19 +710,6 @@
   <animation>
     <type>pick</type>
     <object-name>BARO</object-name>
-    <action>
-      <button>0</button>
-      <binding>
-        <command>nasal</command>
-        <script>screen1.BARO.button.down();</script>
-      </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.BARO.button.Up();</script>
-        </binding>
-      </mod-up>
-    </action>
     <action>
       <button>3</button>
       <binding>
