@@ -10,7 +10,7 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   sodipodi:docname="PFD_2016_11_02.svg"
+   sodipodi:docname="PFD.svg"
    inkscape:version="0.91 r13725"
    version="1.1"
    id="svg3140"
@@ -24,19 +24,19 @@
      borderopacity="1"
      inkscape:pageopacity="1"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="157.12674"
-     inkscape:cy="585.08057"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="88.261831"
+     inkscape:cy="429.21398"
      inkscape:document-units="px"
-     inkscape:current-layer="layer29"
-     showgrid="false"
+     inkscape:current-layer="layer17"
+     showgrid="true"
      showguides="false"
      inkscape:guide-bbox="true"
-     inkscape:window-width="1918"
-     inkscape:window-height="1078"
+     inkscape:window-width="1599"
+     inkscape:window-height="1198"
      inkscape:window-x="0"
      inkscape:window-y="0"
-     inkscape:window-maximized="1"
+     inkscape:window-maximized="0"
      inkscape:snap-grids="true"
      inkscape:snap-to-guides="true"
      inkscape:object-paths="true">
@@ -218,6 +218,9 @@
        position="831.24219,472.5"
        orientation="0,1"
        id="guide5443" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid4697" />
   </sodipodi:namedview>
   <defs
      id="defs3142">
@@ -324,7 +327,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -342,8 +345,6 @@
        inkscape:groupmode="layer"
        inkscape:label="Laag 1">
       <image
-         sodipodi:absref="/mnt/merope/flightgear/Aircraft_xmw/Instruments-3d/Farmin/G1000/Pages/PFD/../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd.png"
-         xlink:href="../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd.png"
          y="284.36218"
          x="-1.0000001"
          id="image3156"
@@ -357,8 +358,6 @@
        style="display:none"
        sodipodi:insensitive="true">
       <image
-         sodipodi:absref="/mnt/merope/flightgear/Aircraft_xmw/Instruments-3d/Farmin/G1000/Pages/PFD/../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd2.png"
-         xlink:href="../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd2.png"
          width="1024"
          height="768"
          preserveAspectRatio="none"
@@ -373,20 +372,16 @@
        style="display:none;opacity:1"
        sodipodi:insensitive="true">
       <image
-         sodipodi:absref="/home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/Glideslope.png"
          y="81.514725"
          x="669"
          id="image4716"
-         xlink:href="file:///home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/Glideslope.png"
          preserveAspectRatio="none"
          height="402.48529"
          width="140.16901" />
       <image
-         sodipodi:absref="/home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/pfd5.png"
          y="396.47003"
          x="232.97455"
          id="image5726"
-         xlink:href="file:///home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/pfd5.png"
          preserveAspectRatio="none"
          height="369.70566"
          width="452.86435" />
@@ -398,8 +393,6 @@
        style="display:none;opacity:1"
        sodipodi:insensitive="true">
       <image
-         sodipodi:absref="/mnt/merope/flightgear/Aircraft_xmw/Instruments-3d/Farmin/G1000/Pages/PFD/../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd4.png"
-         xlink:href="../../../../../Bureaublad/fggfs/garmin_flightdeck/notes/pfd4.png"
          width="1024"
          height="768"
          preserveAspectRatio="none"
@@ -414,11 +407,9 @@
        style="display:none"
        sodipodi:insensitive="true">
       <image
-         sodipodi:absref="/home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/pfd6.png"
          y="57"
          x="703"
          id="image6029"
-         xlink:href="file:///home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/pfd6.png"
          preserveAspectRatio="none"
          height="426.45114"
          width="106.11226" />
@@ -430,20 +421,16 @@
        style="display:none"
        sodipodi:insensitive="true">
       <image
-         sodipodi:absref="/home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/tohigh.png"
          y="-382.23364"
          x="340.50003"
          id="image7325"
-         xlink:href="file:///home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/tohigh.png"
          preserveAspectRatio="none"
          height="323.2623"
          width="240.47562" />
       <image
-         sodipodi:absref="/home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/pfderror.png"
          y="3.027916e-05"
          x="0"
          id="image5312"
-         xlink:href="file:///home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/pfderror.png"
          preserveAspectRatio="none"
          height="768"
          width="1024" />
@@ -455,11 +442,9 @@
        style="display:none"
        sodipodi:insensitive="true">
       <image
-         sodipodi:absref="/home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/pfd8.png"
          y="-5.6843419e-14"
          x="0"
          id="image5445"
-         xlink:href="file:///home/jean-paul/Bureaublad/fggfs/garmin_flightdeck/notes/pfd8.png"
          preserveAspectRatio="none"
          height="768"
          width="1024" />
