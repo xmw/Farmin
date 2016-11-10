@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- vim: tabstop=2 expandtab
+-->
 
 <PropertyList>
 
@@ -67,18 +69,18 @@
     <object-name>ENT</object-name>
     <object-name>FmsOuter</object-name>
     <object-name>FmsInner</object-name>
-    <object-name>SoftKey.000</object-name>
-    <object-name>SoftKey.001</object-name>
-    <object-name>SoftKey.002</object-name>
-    <object-name>SoftKey.003</object-name>
-    <object-name>SoftKey.004</object-name>
-    <object-name>SoftKey.005</object-name>
-    <object-name>SoftKey.006</object-name>
-    <object-name>SoftKey.007</object-name>
-    <object-name>SoftKey.008</object-name>
-    <object-name>SoftKey.009</object-name>
-    <object-name>SoftKey.010</object-name>
-    <object-name>SoftKey.011</object-name>
+    <object-name>SoftKey.B00</object-name>
+    <object-name>SoftKey.B01</object-name>
+    <object-name>SoftKey.B02</object-name>
+    <object-name>SoftKey.B03</object-name>
+    <object-name>SoftKey.B04</object-name>
+    <object-name>SoftKey.B05</object-name>
+    <object-name>SoftKey.B06</object-name>
+    <object-name>SoftKey.B07</object-name>
+    <object-name>SoftKey.B08</object-name>
+    <object-name>SoftKey.B09</object-name>
+    <object-name>SoftKey.B10</object-name>
+    <object-name>SoftKey.B11</object-name>
     <object-name>Cover</object-name>
     <texture-prop>texture</texture-prop>
     <texture>Textures/GDU-104X.png</texture>
@@ -132,18 +134,18 @@
     <object-name>ENT</object-name>
     <object-name>FmsOuter</object-name>
     <object-name>FmsInner</object-name>
-    <object-name>SoftKey.000</object-name>
-    <object-name>SoftKey.001</object-name>
-    <object-name>SoftKey.002</object-name>
-    <object-name>SoftKey.003</object-name>
-    <object-name>SoftKey.004</object-name>
-    <object-name>SoftKey.005</object-name>
-    <object-name>SoftKey.006</object-name>
-    <object-name>SoftKey.007</object-name>
-    <object-name>SoftKey.008</object-name>
-    <object-name>SoftKey.009</object-name>
-    <object-name>SoftKey.010</object-name>
-    <object-name>SoftKey.011</object-name>
+    <object-name>SoftKey.B00</object-name>
+    <object-name>SoftKey.B01</object-name>
+    <object-name>SoftKey.B02</object-name>
+    <object-name>SoftKey.B03</object-name>
+    <object-name>SoftKey.B04</object-name>
+    <object-name>SoftKey.B05</object-name>
+    <object-name>SoftKey.B06</object-name>
+    <object-name>SoftKey.B07</object-name>
+    <object-name>SoftKey.B08</object-name>
+    <object-name>SoftKey.B09</object-name>
+    <object-name>SoftKey.B10</object-name>
+    <object-name>SoftKey.B11</object-name>
     <object-name>Cover</object-name>
   </effect>
 
@@ -988,220 +990,146 @@
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.000</object-name>
+    <object-name>SoftKey.B00</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.000.button.Down();</script>
+       <script>screen1.SoftKey.B00.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.000.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.001</object-name>
+    <object-name>SoftKey.B01</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.001.button.Down();</script>
+       <script>screen1.SoftKey.B01.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.001.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.002</object-name>
+    <object-name>SoftKey.B02</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.002.button.Down();</script>
+       <script>screen1.SoftKey.B02.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.002.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.003</object-name>
+    <object-name>SoftKey.B03</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.003.button.Down();</script>
+       <script>screen1.SoftKey.B03.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.003.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.004</object-name>
+    <object-name>SoftKey.B04</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.004.button.Down();</script>
+       <script>screen1.SoftKey.B04.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.004.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.005</object-name>
+    <object-name>SoftKey.B05</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.005.button.Down();</script>
+       <script>screen1.SoftKey05.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.005.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.006</object-name>
+    <object-name>SoftKey.B06</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.006.button.Down();</script>
+       <script>screen1.SoftKey.B06.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.006.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.007</object-name>
+    <object-name>SoftKey.B07</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.007.button.Down();</script>
+       <script>screen1.SoftKey.B07.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.007.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.008</object-name>
+    <object-name>SoftKey.B08</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.008.button.Down();</script>
+       <script>screen1.SoftKey.B08.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.008.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.009</object-name>
+    <object-name>SoftKey.B09</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.009.button.Down();</script>
+       <script>screen1.SoftKey.B09.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.009.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.010</object-name>
+    <object-name>SoftKey.B10</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.010.button.Down();</script>
+       <script>screen1.SoftKey.B10.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.010.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.011</object-name>
+    <object-name>SoftKey.B11</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen1.SoftKey.011.button.Down();</script>
+       <script>screen1.SoftKey.B11.Down();</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen1.SoftKey.011.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
-
-
 
 </PropertyList>
