@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- vim: tabstop=2 expandtab
+-->
 
 <PropertyList>
 
@@ -33,18 +35,18 @@
     <object-name>NavOuter</object-name>
     <object-name>NavInner</object-name>
     <object-name>HDG</object-name>
-    <object-name>AP.L0</object-name>
-    <object-name>AP.L1</object-name>
-    <object-name>AP.L2</object-name>
-    <object-name>AP.L3</object-name>
-    <object-name>AP.L4</object-name>
-    <object-name>AP.L5</object-name>
-    <object-name>AP.R0</object-name>
-    <object-name>AP.R1</object-name>
-    <object-name>AP.R2</object-name>
-    <object-name>AP.R3</object-name>
-    <object-name>AP.R4</object-name>
-    <object-name>AP.R5</object-name>
+    <object-name>AP.AP</object-name>
+    <object-name>AP.FD</object-name>
+    <object-name>AP.NAV</object-name>
+    <object-name>AP.ALT</object-name>
+    <object-name>AP.VS</object-name>
+    <object-name>AP.FLC</object-name>
+    <object-name>AP.YD</object-name>
+    <object-name>AP.HDG</object-name>
+    <object-name>AP.APR</object-name>
+    <object-name>AP.VNV</object-name>
+    <object-name>AP.UP</object-name>
+    <object-name>AP.DN</object-name>
     <object-name>AltOuter</object-name>
     <object-name>AltInner</object-name>
     <object-name>VolNAV</object-name>
@@ -67,18 +69,18 @@
     <object-name>ENT</object-name>
     <object-name>FmsOuter</object-name>
     <object-name>FmsInner</object-name>
-    <object-name>SoftKey.000</object-name>
-    <object-name>SoftKey.001</object-name>
-    <object-name>SoftKey.002</object-name>
-    <object-name>SoftKey.003</object-name>
-    <object-name>SoftKey.004</object-name>
-    <object-name>SoftKey.005</object-name>
-    <object-name>SoftKey.006</object-name>
-    <object-name>SoftKey.007</object-name>
-    <object-name>SoftKey.008</object-name>
-    <object-name>SoftKey.009</object-name>
-    <object-name>SoftKey.010</object-name>
-    <object-name>SoftKey.011</object-name>
+    <object-name>SoftKey.B0</object-name>
+    <object-name>SoftKey.B1</object-name>
+    <object-name>SoftKey.B2</object-name>
+    <object-name>SoftKey.B3</object-name>
+    <object-name>SoftKey.B4</object-name>
+    <object-name>SoftKey.B5</object-name>
+    <object-name>SoftKey.B6</object-name>
+    <object-name>SoftKey.B7</object-name>
+    <object-name>SoftKey.B8</object-name>
+    <object-name>SoftKey.B9</object-name>
+    <object-name>SoftKey.BA</object-name>
+    <object-name>SoftKey.BB</object-name>
     <object-name>Cover</object-name>
     <texture-prop>texture</texture-prop>
     <texture>Textures/GDU-104X.png</texture>
@@ -98,18 +100,18 @@
     <object-name>NavOuter</object-name>
     <object-name>NavInner</object-name>
     <object-name>HDG</object-name>
-    <object-name>AP.L0</object-name>
-    <object-name>AP.L1</object-name>
-    <object-name>AP.L2</object-name>
-    <object-name>AP.L3</object-name>
-    <object-name>AP.L4</object-name>
-    <object-name>AP.L5</object-name>
-    <object-name>AP.R0</object-name>
-    <object-name>AP.R1</object-name>
-    <object-name>AP.R2</object-name>
-    <object-name>AP.R3</object-name>
-    <object-name>AP.R4</object-name>
-    <object-name>AP.R5</object-name>
+    <object-name>AP.AP</object-name>
+    <object-name>AP.FD</object-name>
+    <object-name>AP.NAV</object-name>
+    <object-name>AP.ALT</object-name>
+    <object-name>AP.VS</object-name>
+    <object-name>AP.FLC</object-name>
+    <object-name>AP.YD</object-name>
+    <object-name>AP.HDG</object-name>
+    <object-name>AP.APR</object-name>
+    <object-name>AP.VNV</object-name>
+    <object-name>AP.UP</object-name>
+    <object-name>AP.DN</object-name>
     <object-name>AltOuter</object-name>
     <object-name>AltInner</object-name>
     <object-name>VolNAV</object-name>
@@ -132,18 +134,18 @@
     <object-name>ENT</object-name>
     <object-name>FmsOuter</object-name>
     <object-name>FmsInner</object-name>
-    <object-name>SoftKey.000</object-name>
-    <object-name>SoftKey.001</object-name>
-    <object-name>SoftKey.002</object-name>
-    <object-name>SoftKey.003</object-name>
-    <object-name>SoftKey.004</object-name>
-    <object-name>SoftKey.005</object-name>
-    <object-name>SoftKey.006</object-name>
-    <object-name>SoftKey.007</object-name>
-    <object-name>SoftKey.008</object-name>
-    <object-name>SoftKey.009</object-name>
-    <object-name>SoftKey.010</object-name>
-    <object-name>SoftKey.011</object-name>
+    <object-name>SoftKey.B0</object-name>
+    <object-name>SoftKey.B1</object-name>
+    <object-name>SoftKey.B2</object-name>
+    <object-name>SoftKey.B3</object-name>
+    <object-name>SoftKey.B4</object-name>
+    <object-name>SoftKey.B5</object-name>
+    <object-name>SoftKey.B6</object-name>
+    <object-name>SoftKey.B7</object-name>
+    <object-name>SoftKey.B8</object-name>
+    <object-name>SoftKey.B9</object-name>
+    <object-name>SoftKey.BA</object-name>
+    <object-name>SoftKey.BB</object-name>
     <object-name>Cover</object-name>
   </effect>
 
@@ -159,7 +161,7 @@
   </animation>
 
   <animation>
-    <name>screen2</name>
+    <name>FarminScreen2</name>
     <object-name>Screen</object-name>
   </animation>
 
@@ -181,12 +183,12 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>screen2.VolNAV.button.down();</script>
+        <script>FarminScreen2.VolNAV.button.down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.APL0.button.Up();</script>
+          <script>FarminScreen2.APL0.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -194,14 +196,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.VolNAV.knob.up();</script>
+       <script>FarminScreen2.VolNAV.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.VolNAV.knob.down();</script>
+       <script>FarminScreen2.VolNAV.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -213,12 +215,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AsSwitchNav.button.Down();</script>
+       <script>FarminScreen2.AsSwitchNav.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.AsSwitchNav.button.Up();</script>
+          <script>FarminScreen2.AsSwitchNav.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -231,14 +233,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.NavOuter.knob.up();</script>
+       <script>FarminScreen2.NavOuter.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.NavOuter.knob.down();</script>
+       <script>FarminScreen2.NavOuter.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -250,12 +252,12 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>screen2.NavInner.button.down();</script>
+        <script>FarminScreen2.NavInner.button.down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.NavInner.button.Up();</script>
+          <script>FarminScreen2.NavInner.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -263,14 +265,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.NavInner.knob.up();</script>
+       <script>FarminScreen2.NavInner.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.NavInner.knob.down();</script>
+       <script>FarminScreen2.NavInner.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -282,12 +284,12 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>screen2.HDG.button.down();</script>
+        <script>FarminScreen2.HDG.button.down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.HDG.button.Up();</script>
+          <script>FarminScreen2.HDG.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -295,231 +297,159 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.HDG.knob.up();</script>
+       <script>FarminScreen2.HDG.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.HDG.knob.down();</script>
+       <script>FarminScreen2.HDG.knob.down();</script>
       </binding>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.L0</object-name>
+    <object-name>AP.AP</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.L0.button.Down();</script>
+       <script>FarminScreen2.AP.AP()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.L0.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.L1</object-name>
+    <object-name>AP.FD</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.L1.button.Down();</script>
+       <script>FarminScreen2.AP.FD()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.L1.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.L2</object-name>
+    <object-name>AP.NAV</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.L2.button.Down();</script>
+       <script>FarminScreen2.AP.NAV()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.L2.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.L3</object-name>
+    <object-name>AP.ALT</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.L3.button.Down();</script>
+       <script>FarminScreen2.AP.ALT()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.L3.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.L4</object-name>
+    <object-name>AP.VS</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.L4.button.Down();</script>
+       <script>FarminScreen2.AP.VS()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.L4.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.L5</object-name>
+    <object-name>AP.FLC</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.L5.button.Down();</script>
+       <script>FarminScreen2.AP.FLC()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.L5.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.R0</object-name>
+    <object-name>AP.YD</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.R0.button.Down();</script>
+       <script>FarminScreen2.AP.YD()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.R0.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.R1</object-name>
+    <object-name>AP.HDG</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.R1.button.Down();</script>
+       <script>FarminScreen2.AP.HDG()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.R1.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.R2</object-name>
+    <object-name>AP.APR</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.R2.button.Down();</script>
+       <script>FarminScreen2.AP.APR()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.R2.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.R3</object-name>
+    <object-name>AP.VNV</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.R3.button.Down();</script>
+       <script>FarminScreen2.AP.VNV()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.R3.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.R4</object-name>
+    <object-name>AP.UP</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.R4.button.Down();</script>
+       <script>FarminScreen2.AP.UP()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.R4.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>AP.R5</object-name>
+    <object-name>AP.DN</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AP.R5.button.Down();</script>
+       <script>FarminScreen2.AP.DN()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.AP.R5.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
@@ -530,14 +460,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AltOuter.knob.up();</script>
+       <script>FarminScreen2.AltOuter.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AltOuter.knob.down();</script>
+       <script>FarminScreen2.AltOuter.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -549,12 +479,12 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>screen2.AltInner.button.down();</script>
+        <script>FarminScreen2.AltInner.button.down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.AltInner.button.Up();</script>
+          <script>FarminScreen2.AltInner.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -562,14 +492,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AltInner.knob.up();</script>
+       <script>FarminScreen2.AltInner.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AltInner.knob.down();</script>
+       <script>FarminScreen2.AltInner.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -581,12 +511,12 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>screen2.VolCom.button.down();</script>
+        <script>FarminScreen2.VolCom.button.down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.VolCom.button.Up();</script>
+          <script>FarminScreen2.VolCom.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -594,14 +524,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.VolCom.knob.up();</script>
+       <script>FarminScreen2.VolCom.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.VolCom.knob.down();</script>
+       <script>FarminScreen2.VolCom.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -613,12 +543,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.AsSwitchCOM.button.Down();</script>
+       <script>FarminScreen2.AsSwitchCOM.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.AsSwitchCOM.button.Up();</script>
+          <script>FarminScreen2.AsSwitchCOM.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -631,14 +561,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.ComOuter.knob.up();</script>
+       <script>FarminScreen2.ComOuter.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.ComOuter.knob.down();</script>
+       <script>FarminScreen2.ComOuter.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -650,12 +580,12 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>screen2.ComInner.button.down();</script>
+        <script>FarminScreen2.ComInner.button.down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.ComInner.button.Up();</script>
+          <script>FarminScreen2.ComInner.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -663,14 +593,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.ComInner.knob.up();</script>
+       <script>FarminScreen2.ComInner.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.ComInner.knob.down();</script>
+       <script>FarminScreen2.ComInner.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -679,17 +609,30 @@
     <type>pick</type>
     <object-name>CRS</object-name>
     <action>
+      <button>0</button>
+      <binding>
+        <command>nasal</command>
+        <script>FarminScreen2.CRS.button.down();</script>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>nasal</command>
+          <script>FarminScreen2.CRS.button.Up();</script>
+        </binding>
+      </mod-up>
+    </action>
+    <action>
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.CRS.knob.up();</script>
+       <script>FarminScreen2.CRS.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.CRS.knob.down();</script>
+       <script>FarminScreen2.CRS.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -701,12 +644,12 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>screen2.BARO.button.down();</script>
+        <script>FarminScreen2.BARO.button.down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.BARO.button.Up();</script>
+          <script>FarminScreen2.BARO.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -714,14 +657,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.BARO.knob.up();</script>
+       <script>FarminScreen2.BARO.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.BARO.knob.down();</script>
+       <script>FarminScreen2.BARO.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -733,12 +676,12 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>screen2.PAN.button.down();</script>
+        <script>FarminScreen2.PAN.button.down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.PAN.button.Up();</script>
+          <script>FarminScreen2.PAN.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -746,14 +689,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.PAN.knob.up();</script>
+       <script>FarminScreen2.PAN.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.PAN.knob.down();</script>
+       <script>FarminScreen2.PAN.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -765,12 +708,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.PANUp.button.Down();</script>
+       <script>FarminScreen2.PANUp.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.PANUp.button.Up();</script>
+          <script>FarminScreen2.PANUp.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -782,12 +725,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.PANLeft.button.Down();</script>
+       <script>FarminScreen2.PANLeft.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.PANLeft.button.Up();</script>
+          <script>FarminScreen2.PANLeft.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -799,12 +742,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.PANRight.button.Down();</script>
+       <script>FarminScreen2.PANRight.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.PANRight.button.Up();</script>
+          <script>FarminScreen2.PANRight.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -816,12 +759,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.PanDown.button.Down();</script>
+       <script>FarminScreen2.PanDown.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.PanDown.button.Up();</script>
+          <script>FarminScreen2.PanDown.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -834,12 +777,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.DidectTo.button.Down();</script>
+       <script>FarminScreen2.DidectTo.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.DidectTo.button.Up();</script>
+          <script>FarminScreen2.DidectTo.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -852,12 +795,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.MENU.button.Down();</script>
+       <script>FarminScreen2.MENU.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.MENU.button.Up();</script>
+          <script>FarminScreen2.MENU.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -870,12 +813,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.FPL.button.Down();</script>
+       <script>FarminScreen2.FPL.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.FPL.button.Up();</script>
+          <script>FarminScreen2.FPL.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -888,12 +831,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.PROC.button.Down();</script>
+       <script>FarminScreen2.PROC.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.PROC.button.Up();</script>
+          <script>FarminScreen2.PROC.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -906,12 +849,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.CLR.button.Down();</script>
+       <script>FarminScreen2.CLR.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.CLR.button.Up();</script>
+          <script>FarminScreen2.CLR.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -924,12 +867,12 @@
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.ENT.button.Down();</script>
+       <script>FarminScreen2.ENT.button.Down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.ENT.button.Up();</script>
+          <script>FarminScreen2.ENT.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -942,14 +885,14 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.FmsOuter.knob.up();</script>
+       <script>FarminScreen2.FmsOuter.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.FmsOuter.knob.down();</script>
+       <script>FarminScreen2.FmsOuter.knob.down();</script>
       </binding>
     </action>
   </animation>
@@ -961,12 +904,12 @@
       <button>0</button>
       <binding>
         <command>nasal</command>
-        <script>screen2.FmsInner.button.down();</script>
+        <script>FarminScreen2.FmsInner.button.down();</script>
       </binding>
       <mod-up>
         <binding>
           <command>nasal</command>
-          <script>screen2.FmsInner.button.Up();</script>
+          <script>FarminScreen2.FmsInner.button.Up();</script>
         </binding>
       </mod-up>
     </action>
@@ -974,234 +917,160 @@
       <button>3</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.FmsInner.knob.up();</script>
+       <script>FarminScreen2.FmsInner.knob.up();</script>
       </binding>
     </action>
     <action>
       <button>4</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.FmsInner.knob.down();</script>
+       <script>FarminScreen2.FmsInner.knob.down();</script>
       </binding>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.000</object-name>
+    <object-name>SoftKey.B0</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.000.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B0()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.000.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.001</object-name>
+    <object-name>SoftKey.B1</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.001.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B1()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.001.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.002</object-name>
+    <object-name>SoftKey.B2</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.002.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B2()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.002.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.003</object-name>
+    <object-name>SoftKey.B3</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.003.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B3()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.003.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.004</object-name>
+    <object-name>SoftKey.B4</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.004.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B4()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.004.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.005</object-name>
+    <object-name>SoftKey.B5</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.005.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B5()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.005.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.006</object-name>
+    <object-name>SoftKey.B6</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.006.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B6()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.006.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.007</object-name>
+    <object-name>SoftKey.B7</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.007.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B7()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.007.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.008</object-name>
+    <object-name>SoftKey.B8</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.008.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B8()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.008.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.009</object-name>
+    <object-name>SoftKey.B9</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.009.button.Down();</script>
+       <script>FarminScreen2.SoftKey.B9()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.009.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.010</object-name>
+    <object-name>SoftKey.BA</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.010.button.Down();</script>
+       <script>FarminScreen2.SoftKey.BA()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.010.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
 
   <animation>
     <type>pick</type>
-    <object-name>SoftKey.011</object-name>
+    <object-name>SoftKey.BB</object-name>
     <action>
       <button>0</button>
       <binding>
        <command>nasal</command>
-       <script>screen2.SoftKey.011.button.Down();</script>
+       <script>FarminScreen2.SoftKey.BB()</script>
       </binding>
-      <mod-up>
-        <binding>
-          <command>nasal</command>
-          <script>screen2.SoftKey.011.button.Up();</script>
-        </binding>
-      </mod-up>
     </action>
   </animation>
-
-
 
 </PropertyList>

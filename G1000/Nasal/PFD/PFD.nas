@@ -1,3 +1,5 @@
+# vim: tabstop=4 expandtab
+
 var PFD = {
 	new: func(canvas_group)
 	{
@@ -17,9 +19,9 @@ var PFD = {
 		canvas.parsesvg(m.pfd, "Aircraft/Instruments-3d/Farmin/G1000/Pages/PFD/PFD.svg", {'font-mapper': font_mapper});
 		var Speed = {};
 
-		var svg_keys = ["Horizon","bankPointer","bankPointerLineL",
-		"bankPointerLineR","Compass","SlipSkid","CompassText","VSI",
-		"VSIText","HorizonLine", "PitchScale"];
+        var svg_keys = ["Horizon", "bankPointer","bankPointerLineL",
+            "bankPointerLineR","HSI", "SlipSkid","HDGVAL","VSI",
+		    "VSIText","HorizonLine", "PitchScale"];
 		#speed
 		svg_keys ~= ["LindSpeed","SpeedtLint1","SpeedtLint10","SpeedtLint100"];
 		#alt
@@ -31,14 +33,16 @@ var PFD = {
 		svg_keys ~= ["AltBigC","AltSmallC","LintAlt"];
 		svg_keys ~= ["Marker","MarkerBG","MarkerText"];
 		svg_keys ~= ["MAPL","MAPR"];
-		svg_keys ~= ["ILS"];
-		svg_keys ~= ["HSBug"];
 
 		svg_keys = svg_keys ~[];
 
 		foreach(var key; svg_keys) {
 			m[key] = nil;
 			m[key] = m.pfd.getElementById(key);
+            if (m[key] == nil) {
+                print(sprintf("Element %s not found.", key));
+                continue
+            }
 			m[key].updateCenter();
 			m[key].trans	= m[key].createTransform();
 			m[key].rot		= m[key].createTransform();
@@ -46,10 +50,23 @@ var PFD = {
 
 		#5,715272637
 		svg_keys = ["Lind"];
+		svg_keys ~= ["CompassRot", "HSB"];
+		svg_keys ~= ["COMPASSNAV1", "NAV1CDI", "NAV1TO", "NAV1FROM"];
+		svg_keys ~= ["COMPASSNAV2", "NAV2CDI", "NAV2TO", "NAV2FROM"];
+		svg_keys ~= ["COMPASSGPS", "GPSCDI"];
+		svg_keys ~= ["COMPASSADF"];
+		svg_keys ~= ["CRS", "CRSVAL"];
+		svg_keys ~= ["GS", "GSI"];
+        svg_keys ~= ["HDGFAIL", "HDGVAL", "HDG"];
+        svg_keys ~= ["HDGTGTVAL", "IASTGTVAL"];
 
 		foreach(var key; svg_keys) {
 			m[key] = nil;
 			m[key] = m.pfd.getElementById(key);
+            if (m[key] == nil) {
+                print(sprintf("Element %s not found.", key));
+                continue
+            }
 		};
 
 		foreach(var key; ["rect6051"]) {
@@ -83,41 +100,49 @@ var PFD = {
 		m.MAPd.set("clip", "rect(493, 1011, 709, 711).setRotation(45+D2R,[0,0])");
 		m.MAPd.hide();
 
-		m.pfd.getElementById("layer18").hide(); # compass gps
-		m.pfd.getElementById("layer21").hide(); # Bearing1
-		m.pfd.getElementById("g5375").hide();   # Bearing2
-		foreach(key; ["rect5541", "rect5543", "rect3958", "rect5537", "rect3958-8", "rect5539", "rect3958-2", "rect6043", "rect5425"]) m.pfd.getElementById(key).hide(); #around TAS
-		foreach(key; ["ComparatorWindow", "Reversionary_Sensor", "Annunciation_Window", "MAPR", "g7327", "MAPL", "g7332", "rect7334", "WeatherBG"]) m.pfd.getElementById(key).hide();
-		foreach(key; ["path4547", "path4565", "path4547-8", "path4549"]) m.pfd.getElementById(key).hide(); # around DME
-		foreach(key; ["g5825", "rect5336", "ILS", "path5301"]) m.pfd.getElementById(key).hide(); # ILS
-		m.pfd.getElementById("rect5434").hide(); #alt trend
-		m.pfd.getElementById("rect5430").hide(); #speed trend
+		foreach(key; ["ComparatorWindow", "Reversionary_Sensor",
+            "Annunciation_Window", "MAPR", "g7327", "MAPL", "g7332", "rect7334",
+            "WeatherBG", "rect5434", "rect5430", "error_windows"]) {
+            elem = m.pfd.getElementById(key);
+            if (elem != nil)
+                m.pfd.getElementById(key).hide()
+            else
+                print(sprintf("Elements %s not found.", key));
+        }
 
 		m.nav1defl = 0;
 		m.nav2defl = 0;
-		setlistener("/autopilot/settings/heading-bug-deg",
-			func() { m.updateAutopilot() }, 1);
-		setlistener("/autopilot/settings/target-altitude-ft",
-			func() { m.updateAutopilot() }, 1);
-		setlistener("/autopilot/settings/target-speed-kt",
-			func() { m.updateAutopilot() }, 1);
-		setlistener("/instrumentation/altimeter/setting-hpa",
-			func() { m.updateQNH() }, 1);
-
-		return m
+		setlistener("autopilot/settings/heading-bug-deg",
+			func m.updateHdgTgt(), 1, 0);
+		setlistener("autopilot/settings/target-altitude-ft",
+			func m.updateAltTgt(), 1, 0);
+		setlistener("autopilot/settings/target-speed-kt",
+			func m.updateIasTgt(), 1, 0);
+		setlistener("instrumentation/altimeter/setting-hpa",
+			func() { m.updateQNH() }, 0, 0);
+		setlistener("instrumentation/altimeter/setting-inhg",
+			func() { m.updateQNH() }, 0, 0);
+		setlistener("instrumentation/FarminTemp/baro-display-hpa",
+			func() { m.updateQNH() }, 1, 0);
+		setlistener("autopilot/settings/target-altitude-ft",
+			func m.updateAltTgt(), 1, 0);
+		return m;
 	},
 
 	updateAi: func(){
-		#var roll = getprop("/instrumentation/attitude-indicator/indicated-roll-deg");
-		#var pitch = getprop("/instrumentation/attitude-indicator/indicated-pitch-deg");
-		var roll = getprop("/instrumentation/attitude-indicator/internal-roll-deg");
-		var pitch = getprop("/instrumentation/attitude-indicator/internal-pitch-deg");
-		if (getprop("/instrumentation/attitude-indicator/serviceable") == 1 and roll != nil and pitch != nil) {
-			me.pfd.getElementById("g6979").hide();
-			foreach(var key; ["layer4", "bankPointer"]) me.pfd.getElementById(key).show();
+		var roll = getprop(
+            "instrumentation/attitude-indicator/indicated-roll-deg");
+		var pitch = getprop(
+            "instrumentation/attitude-indicator/indicated-pitch-deg");
+		if (getprop("instrumentation/attitude-indicator/serviceable") == 1
+            and roll != nil and pitch != nil) {
+			me.pfd.getElementById("ATTFAIL").hide();
+			foreach(var key; ["layer4", "bankPointer"])
+                me.pfd.getElementById(key).show();
 		} else {
-			me.pfd.getElementById("g6979").show();
-			foreach(var key; ["layer4", "bankPointer"]) me.pfd.getElementById(key).hide();
+			me.pfd.getElementById("ATTFAIL").show();
+			foreach(var key; ["layer4", "bankPointer"])
+                me.pfd.getElementById(key).hide();
 			return;
 		};
 
@@ -216,70 +241,86 @@ var PFD = {
 		}
 	},
 
-	UpdateHeading: func() {
-		Heading = getprop("/instrumentation/heading-indicator/indicated-heading-deg");
-		HSB = getprop("/autopilot/settings/heading-bug-deg") or 0;
-		if (getprop("/instrumentation/heading-indicator/serviceable") and Heading != nil) {
-			me.pfd.getElementById("g7308").hide();
-			foreach(var key; ["rect4381", "CompassText"]) me.pfd.getElementById(key).show();
-		} else {
-			me.pfd.getElementById("g7308").show();
-			foreach(var key; ["rect4381", "CompassText"]) me.pfd.getElementById(key).hide();
-			Heading = 0;
-		}
-		me.HSBug.setRotation((HSB-Heading)*D2R);
-		me.Compass.setRotation(-Heading*D2R);
-		me.CompassText.setText(sprintf("%03.0f°",math.floor(Heading)));
+	UpdateHeading: func {
+		var hdg = getprop("instrumentation/heading-indicator/indicated-heading-deg");
+		var hdgFail = getprop("instrumentation/heading-indicator/serviceable") == 0 or hdg == nil;
+		if (hdgFail == 1) {
+            hdg = 0;
+            me.HDGFAIL.show();
+            me.HDG.hide();
+        } else {
+            me.HDGFAIL.hide();
+            me.HDG.show();
+        }
+        me.CompassRot.setRotation(-hdg*D2R);
+        me.HDGVAL.setText(sprintf("%03.0f°", math.round(hdg)));
 
-		nav1sel = getprop("/instrumentation/nav[0]/radials/selected-deg");
-		me.pfd.getElementById("NAV1").setRotation((nav1sel-Heading)*D2R);
-		valid = getprop("/instrumentation/nav[0]/serviceable") == 1 and getprop("/instrumentation/nav[0]/in-range") == 1;
-		if (valid and getprop("/instrumentation/nav[0]/cdi/serviceable") == 1) {
-			me.pfd.getElementById("NAV1CDI").setTranslation(-me.nav1defl, 0);
-			me.nav1defl = getprop("/instrumentation/nav[0]/heading-needle-deflection") * 7;
-			me.pfd.getElementById("NAV1CDI").setTranslation(me.nav1defl, 0);
-			me.pfd.getElementById("NAV1CDI").show();
-		} else {
-			me.pfd.getElementById("NAV1CDI").hide();
-		}
-		if (valid and getprop("/instrumentation/nav[0]/to-from/serviceable") == 1) {
-			if (getprop("/instrumentation/nav[0]/to-flag") == 1)
-				me.pfd.getElementById("NAV1TO").show()
-			else
-				me.pfd.getElementById("NAV1TO").hide();
-			if (getprop("/instrumentation/nav[0]/from-flag") == 1)
-				me.pfd.getElementById("NAV1FROM").show()
-			else
-				me.pfd.getElementById("NAV1FROM").hide();
-		} else {
-			me.pfd.getElementById("NAV1TO").hide();
-			me.pfd.getElementById("NAV1FROM").hide();
-		}
-
-		nav2sel = getprop("/instrumentation/nav[1]/radials/selected-deg");
-		me.pfd.getElementById("g5412").setRotation((nav2sel-Heading)*D2R);
-		valid = getprop("/instrumentation/nav[1]/serviceable") == 1 and getprop("/instrumentation/nav[1]/in-range") == 1;
-		if (valid and getprop("/instrumentation/nav[1]/cdi/serviceable") == 1) {
-			me.pfd.getElementById("rect5410").setTranslation(-me.nav2defl, 0);
-			me.nav2defl = getprop("/instrumentation/nav[1]/heading-needle-deflection") * 7;
-			me.pfd.getElementById("rect5410").setTranslation(me.nav2defl, 0);
-			me.pfd.getElementById("rect5410").show();
-		} else {
-			me.pfd.getElementById("rect5410").hide();
-		}
-		if (valid and getprop("/instrumentation/nav[1]/to-from/serviceable") == 1) {
-			if (getprop("/instrumentation/nav[1]/to-flag") == 1)
-				me.pfd.getElementById("path5424").show()
-			else
-				me.pfd.getElementById("path5424").hide();
-			if (getprop("/instrumentation/nav[1]/from-flag") == 1)
-				me.pfd.getElementById("path5426").show()
-			else
-				me.pfd.getElementById("path5426").hide();
-		} else {
-			me.pfd.getElementById("path5424").hide();
-			me.pfd.getElementById("path5426").hide();
-		}
+        var crsVisible = 0;
+        if (getprop("instrumentation/nav[0]/serviceable") == 1
+            and getprop("instrumentation/FarminTemp/cdi-display") == "nav1") {
+            var deg = getprop("instrumentation/nav[0]/radials/selected-deg");
+            var sel = getprop("instrumentation/nav[0]/radials/selected-deg");
+            me.COMPASSNAV1.setRotation(sel*D2R);
+            me.CRSVAL.setText(sprintf("%03.0f", sel));
+            if (getprop("instrumentation/nav[0]/in-range") == 1 and
+                getprop("instrumentation/nav[0]/cdi/serviceable") == 1) {
+                me.NAV1CDI.setTranslation(-me.nav1defl, 0);
+                me.nav1defl = getprop("instrumentation/nav[0]/heading-needle-deflection-norm") * 70;
+                me.NAV1CDI.setTranslation(me.nav1defl, 0);
+                me.NAV1CDI.show();
+            } else {
+                me.NAV1CDI.hide();
+            }
+            var tofromvalid =
+                getprop("instrumentation/nav[0]/to-from/serviceable") == 1;
+            me.NAV1TO.setVisible(tofromvalid and
+                    getprop("instrumentation/nav[0]/to-flag") == 1);
+            me.NAV1FROM.setVisible(tofromvalid and
+                    getprop("/instrumentation/nav[0]/from-flag") == 1);
+            me.COMPASSNAV1.show();
+            crsVisible = 1;
+        } else {
+            me.COMPASSNAV1.hide();
+        }
+		if (getprop("instrumentation/nav[1]/serviceable") == 1
+			and getprop("instrumentation/FarminTemp/cdi-display") == "nav2") {
+			var deg = getprop("instrumentation/nav[1]/radials/selected-deg");
+		    var sel = getprop("instrumentation/nav[1]/radials/selected-deg");
+		    me.COMPASSNAV2.setRotation(sel*D2R);
+            me.CRSVAL.setText(sprintf("%03.0f", sel));
+            if (getprop("instrumentation/nav[1]/in-range") == 1 and
+                getprop("instrumentation/nav[1]/cdi/serviceable") == 1) {
+                me.NAV2CDI.setTranslation(-me.nav2defl, 0);
+                me.nav2defl = getprop("instrumentation/nav[1]/heading-needle-deflection-norm") * 70;
+                me.NAV2CDI.setTranslation(me.nav2defl, 0);
+                me.NAV2CDI.show();
+            } else {
+                me.NAV2CDI.hide();
+            }
+            var tofromvalid =
+                getprop("instrumentation/nav[1]/to-from/serviceable") == 1;
+            me.NAV2TO.setVisible(tofromvalid and
+                    getprop("instrumentation/nav[1]/to-flag") == 1);
+            me.NAV2FROM.setVisible(tofromvalid and
+                    getprop("/instrumentation/nav[1]/from-flag") == 1);
+            me.COMPASSNAV2.show();
+            crsVisible = 1;
+        } else {
+            me.COMPASSNAV2.hide();
+        }
+		if (getprop("instrumentation/gps/serviceable") == 1
+			and getprop("instrumentation/FarminTemp/cdi-display") == "gps") {
+            me.COMPASSGPS.show();
+        } else {
+            me.COMPASSGPS.hide();
+        }
+        me.CRS.setVisible(crsVisible);
+		if (getprop("instrumentation/adf/serviceable") == 1
+			and getprop("instrumentation/FarminTemp/show-adf") == 1) {
+            me.COMPASSADF.show();
+        } else {
+            me.COMPASSADF.hide();
+        }
 	},
 
 	updateSpeed: func()
@@ -586,43 +627,66 @@ var PFD = {
 			me.MarkerText.setText('I');
 		}
 	},
-
-	updateILS: func(ils){
-		if (ils != nil)
-		{
-			me.ILS.setTranslation(0,-(ils*86.984));
-		}
-		else
-		{
-			me.ILS.setTranslation(0,0);
-		}
+	updateGS: func {
+        if (getprop("instrumentation/FarminTemp/cdi-display") == "nav1"
+            and getprop("instrumentation/nav[0]/gs/serviceable") == 1
+            and getprop("instrumentation/nav[0]/has-gs") == 1)
+            var prefix = "instrumentation/nav[0]/"
+        elsif (getprop("instrumentation/FarminTemp/cdi-display") == "nav2"
+            and getprop("instrumentation/nav[1]/gs/serviceable") == 1
+            and getprop("instrumentation/nav[1]/has-gs") == 1)
+            var prefix = "instrumentation/nav[1]/";
+        else {
+            me.GS.hide();
+            return;
+        }
+        me.GS.show();
+        var defl = getprop(prefix~"gs-needle-deflection-norm");
+        if (getprop(prefix~"gs-in-range") == 1 and defl != nil) {
+            me.GSI.show();
+            me.GSI.setTranslation(0, -86.984 * defl);
+        } else
+            me.GSI.hide();
 	},
 
-	SetMap: func(post)
-	{
-		if(post = 1)
-		{
-			#open map on the left
-		}
-		elsif(post = 2)
-		{
-			#open map on the right
-		}
-		elsif(post = 0)
-		{
-			#close map
-		}
-	},
-	updateAutopilot: func() {
-		hdgtgt = getprop("/autopilot/settings/heading-bug-deg");
-		me.pfd.getElementById("HDGVAL").setText(sprintf("%03.0f°", hdgtgt));
-		kastgt = getprop("/autopilot/settings/target-speed-kt");
-		me.pfd.getElementById("KASTGTVAL").setText(sprintf("%3.0f kt", kastgt));
-		alttgt = getprop("/autopilot/settings/target-altitude-ft");
-		me.pfd.getElementById("ALTTGTVAL").setText(sprintf("%5.0f ft", alttgt));
+	updateIasTgt: func me.IASTGTVAL.setText(sprintf(
+		"%3.0f", getprop("autopilot/settings/target-speed-kt"))),
+	updateHdgTgt: func {
+        var bug = getprop("autopilot/settings/heading-bug-deg");
+        me.HSB.setRotation(bug*D2R);
+        me.HDGTGTVAL.setText(sprintf("%03.0f", bug));
+    },
+	updateAltTgt: func {
+		var alttgt = getprop("autopilot/settings/target-altitude-ft");
+		var neg = math.sgn(alttgt);
+		alttgt = math.abs(alttgt);
+		me.pfd.getElementById("ALTTGTVAL0").setText(
+			sprintf("%02.0f", neg * math.floor(alttgt / 1000)));
+		me.pfd.getElementById("ALTTGTVAL1").setText(
+			sprintf("%03.0f", math.mod(alttgt, 1000)));
 	},
 	updateQNH: func() {
-		qnh = getprop("/instrumentation/altimeter/setting-hpa");
-		me.pfd.getElementById("QNHVAL").setText(sprintf("%4.0f hPa", qnh));
+		if (getprop("instrumentation/FarminTemp/baro-display-hpa") == 1)
+			qnh = sprintf("%4.0fHPA", getprop("instrumentation/altimeter/setting-hpa"))
+		else
+			qnh = sprintf("%5.2fIN", getprop("instrumentation/altimeter/setting-inhg"));
+		me.pfd.getElementById("QNHVAL").setText(qnh);
+	},
+	updateControls: func() {
+		me.pfd.getElementById("THRL").setText(sprintf("%3i", (getprop("/controls/engines/engine[0]/throttle") or 0) * 100));
+		me.pfd.getElementById("THRR").setText(sprintf("%3i", (getprop("/controls/engines/engine[1]/throttle") or 0) * 100));
+		me.pfd.getElementById("ADVL").setText(sprintf("%3i", (getprop("/controls/engines/engine[0]/propeller-pitch") or 0) * 100));
+		me.pfd.getElementById("ADVR").setText(sprintf("%3i", (getprop("/controls/engines/engine[1]/propeller-pitch") or 0) * 100));
+		me.pfd.getElementById("MIXL").setText(sprintf("%3i", (getprop("/controls/engines/engine[0]/mixture") or 0) * 100));
+		me.pfd.getElementById("MIXR").setText(sprintf("%3i", (getprop("/controls/engines/engine[1]/mixture") or 0) * 100));
+		me.pfd.getElementById("ELEVATOR").setText(sprintf("%+4i", (getprop("/controls/flight/elevator") or 0) * 100));
+		me.pfd.getElementById("AILERON").setText(sprintf("%+4i", (getprop("/controls/flight/aileron") or 0) * 100));
+		me.pfd.getElementById("RUDDER").setText(sprintf("%+4i", (getprop("/controls/flight/rudder") or 0) * 100));
+	},
+	updatePerformance: func() {
+		me.pfd.getElementById("TRSL").setText(sprintf("%3i", (getprop("/engines/engine[0]/thrust-lbs") or 0)));
+		me.pfd.getElementById("TRSR").setText(sprintf("%3i", (getprop("/engines/engine[1]/thrust-lbs") or 0)));
+		me.pfd.getElementById("FFLL").setText(sprintf("%3i", getprop("/engines/engine[0]/fuel-flow-gph")));
+		me.pfd.getElementById("FFLR").setText(sprintf("%3i", getprop("/engines/engine[1]/fuel-flow-gph")));
 	},
 };

@@ -1,15 +1,44 @@
+# vim: tabstop=4 expandtab
 screen1 = {};
+
+mapsvg = func(tgt, svg, keylist)
+    foreach (var key; keylist) {
+        var elem = svg.getElementById(key);
+        if (elem == nil)
+            print("Element not found:", key);
+        else {
+            tgt[key] = nil;
+            tgt[key] = elem;
+        }
+    };
+
+var serviceableListener = func(showtrue, showfalse)
+    func(node) {
+        foreach (var key; showtrue)
+            key.setVisible(node.getValue() == 1);
+        foreach (var key; showfalse)
+            key.setVisible(node.getValue() == 0);
+    };
+
+var textListener = func(tgt, format)
+    func(node) {
+        var text = node.getValue();
+        if (format != nil)
+            text = format(text);
+        tgt.setText(text);
+    };
+
 var GDU104XINIT = {
     new: func(screenID,mode)
     {
         var m = { parents:[  GDU104XINIT   ] };
         m.canvas = canvas.new({
-                "name": "screen"~screenID,
+                "name": "FarminScreen"~screenID,
                 "size": [1024, 768],
                 "view": [1024, 768],
                 "mipmapping": 1
         });
-        m.canvas.addPlacement({"node": "Screen", "parent":"screen"~screenID});
+        m.canvas.addPlacement({"node": "Screen", "parent":"FarminScreen"~screenID});
         m.canvas.setColorBackground(1,1,1);
         m.croot = m.canvas.createGroup();
 
@@ -33,148 +62,82 @@ var GDU104XINIT = {
 		};
         canvas.parsesvg(m.top, "Aircraft/Instruments-3d/Farmin/G1000/Pages/top.svg", {'font-mapper': font_mapper});
 
-	if (mode == "PFD") {
-		m.top.getElementById("text5363").setText("");
-		m.top.getElementById("softKeyText01").setText("");
-		m.top.getElementById("softKeyText02").setText("");
-		m.top.getElementById("softKeyText03").setText("");
-		m.top.getElementById("softKeyText04").setText("");
-		m.top.getElementById("softKeyText05").setText("CDI");
-		m.top.getElementById("softKeyText06").setText("");
-		m.top.getElementById("softKeyText07").setText("");
-		m.top.getElementById("softKeyText08").setText("");
-		m.top.getElementById("softKeyText09").setText("");
-		m.top.getElementById("text5109").setText("");
-		m.top.getElementById("text5129").setText("");
-	}
+        foreach(var key; ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+            "A", "B"]) m.top.getElementById("softKeyText"~key).setText("");
+        foreach(var key; ["NAV1", "NAV2", "COM1", "COM2"])
+            m.top.getElementById(key~"CURSOR2").hide();
 
-	m.top.getElementById("rect3875-5").hide();     #NAV1 active cursor
-	m.top.getElementById("rect3875-6-6").hide();   #NAV2 active cursor
-	m.top.getElementById("rect3875-3").hide();     #COM1 active cursor
-	m.top.getElementById("rect3875-6-9").hide();   #COM2 active cursor
-	setlistener("/instrumentation/nav[0]/serviceable",
-	    func(){ m.updateNAV1() }, 1, 0);
-	setlistener("/instrumentation/nav[0]/frequencies/selected-mhz",
-	    func(){ m.updateNAV1() }, 0, 0);
-	setlistener("/instrumentation/nav[0]/frequencies/standby-mhz",
-	    func(){ m.updateNAV1() }, 0, 0);
-	setlistener("/instrumentation/nav[1]/serviceable",
-	    func(){ m.updateNAV2() }, 1, 0);
-	setlistener("/instrumentation/nav[1]/frequencies/selected-mhz",
-	    func(){ m.updateNAV2() }, 0, 0);
-	setlistener("/instrumentation/nav[1]/frequencies/standby-mhz",
-	    func(){ m.updateNAV2() }, 0, 0);
-	setlistener("/instrumentation/comm[0]/serviceable",
-	    func(){ m.updateCOM1() }, 1, 0);
-	setlistener("/instrumentation/comm[0]/frequencies/selected-mhz",
-	    func(){ m.updateCOM1() }, 0, 0);
-	setlistener("/instrumentation/comm[0]/frequencies/standby-mhz",
-	    func(){ m.updateCOM1() }, 0, 0);
-	setlistener("/instrumentation/comm[1]/serviceable",
-	    func(){ m.updateCOM2() }, 1, 0);
-	setlistener("/instrumentation/comm[1]/frequencies/selected-mhz",
-	    func(){ m.updateCOM2() }, 0, 0);
-	setlistener("/instrumentation/comm[1]/frequencies/standby-mhz",
-	    func(){ m.updateCOM2() }, 0, 0);
+        if (mode == "PFD") {
+            m.top.getElementById("softKeyText5").setText("CDI");
+            m.top.getElementById("softKeyText6").setText("DME");
+            m.top.getElementById("softKeyText7").setText("ADF");
+        };
+
+        mapsvg(m, m.top, [
+            "NAV1FREQ", "NAV1FAIL", "NAV1STANDBY", "NAV1SELECTED", "NAV1IDENT",
+            "NAV2FREQ", "NAV2FAIL", "NAV2STANDBY", "NAV2SELECTED", "NAV2IDENT",
+            "NAV1CURSOR", "NAV1SWAP", "NAV2CURSOR", "NAV2SWAP",
+            "COM1FREQ", "COM1FAIL", "COM1STANDBY", "COM1SELECTED",
+            "COM2FREQ", "COM2FAIL", "COM2STANDBY", "COM2SELECTED",
+            "COM1CURSOR", "COM1SWAP", "COM2CURSOR", "COM2SWAP"]);
+
+        var fmtnav = func(f) sprintf("%6.2f", f);
+        var fmtident = func(s) sprintf("%4s", s);
+        setlistener("instrumentation/nav[0]/serviceable",
+            serviceableListener([m.NAV1FREQ,], [m.NAV1FAIL,]), 1, 0);
+	    setlistener("instrumentation/nav[0]/frequencies/standby-mhz",
+	        textListener(m.NAV1STANDBY, fmtnav), 1, 0);
+	    setlistener("instrumentation/nav[0]/frequencies/selected-mhz",
+	        textListener(m.NAV1SELECTED, fmtnav), 1, 0);
+	    setlistener("instrumentation/nav[0]/nav-id",
+	        textListener(m.NAV1IDENT, fmtident), 1, 0);
+	    setlistener("instrumentation/nav[0]/in-range",
+	        serviceableListener([m.NAV1IDENT,], []), 1, 0);
+        setlistener("instrumentation/nav[1]/serviceable",
+            serviceableListener([m.NAV2FREQ,], [m.NAV2FAIL,]), 1, 0);
+	    setlistener("instrumentation/nav[1]/frequencies/standby-mhz",
+	        textListener(m.NAV2STANDBY, fmtnav), 1, 0);
+	    setlistener("instrumentation/nav[1]/frequencies/selected-mhz",
+	        textListener(m.NAV2SELECTED, fmtnav), 1, 0);
+	    setlistener("instrumentation/nav[1]/nav-id",
+	        textListener(m.NAV2IDENT, fmtident), 1, 0);
+	    setlistener("instrumentation/nav[1]/in-range",
+	        serviceableListener([m.NAV2IDENT,], []), 1, 0);
+        setlistener("instrumentation/FarminTemp/nav1selected",
+            serviceableListener([m.NAV1CURSOR, m.NAV1SWAP,],
+                [m.NAV2CURSOR, m.NAV2SWAP], 1, 0));
+
+        var fmtcom = func(f) sprintf("%7.3f", f);
+        setlistener("instrumentation/comm[0]/serviceable",
+            serviceableListener([m.COM1FREQ,], [m.COM1FAIL,]), 1, 0);
+	    setlistener("instrumentation/comm[0]/frequencies/standby-mhz",
+	        textListener(m.COM1STANDBY, fmtcom), 1, 0);
+	    setlistener("instrumentation/comm[0]/frequencies/selected-mhz",
+	        textListener(m.COM1SELECTED, fmtcom), 1, 0);
+        setlistener("instrumentation/comm[1]/serviceable",
+            serviceableListener([m.COM2FREQ,], [m.COM2FAIL,]), 1, 0);
+	    setlistener("instrumentation/comm[1]/frequencies/standby-mhz",
+	        textListener(m.COM2STANDBY, fmtcom), 1, 0);
+	    setlistener("instrumentation/comm[1]/frequencies/selected-mhz",
+	        textListener(m.COM2SELECTED, fmtcom), 1, 0);
+        setlistener("instrumentation/FarminTemp/com1selected",
+            serviceableListener([m.COM1CURSOR, m.COM1SWAP,],
+                [m.COM2CURSOR, m.COM2SWAP], 1, 0));
         return m;
     },
-    updateNAV1: func() {
-	me.top.getElementById("rect3875-6").hide();
-	me.top.getElementById("path4003-0").hide();
-	selected = getprop("instrumentation/nav[0]/frequencies/selected-mhz");
-	standby = getprop("instrumentation/nav[0]/frequencies/standby-mhz");
-	if (getprop("instrumentation/nav[0]/serviceable") == 1 and selected != nil and standby != nil) {
-	    selected = sprintf("%5.2f", selected);
-	    standby = sprintf("%5.2f", standby);
-	    me.top.getElementById("g4375").hide();
-	    me.top.getElementById("rect3875").show();
-	    me.top.getElementById("path4003").show();
-	} else {
-	    selected = "---.--";
-	    standby = "---.--";
-	    me.top.getElementById("g4375").show();
-	    me.top.getElementById("rect3875").hide();
-	    me.top.getElementById("path4003").hide();
-	}
-	me.top.getElementById("text4109").setText(selected);
-	me.top.getElementById("text4109-7").setText(standby);
-    },
-    updateNAV2: func() {
-	me.top.getElementById("rect3875").hide();
-	me.top.getElementById("path4003").hide();
-	selected = getprop("instrumentation/nav[1]/frequencies/selected-mhz");
-	standby = getprop("instrumentation/nav[1]/frequencies/standby-mhz");
-	if (getprop("instrumentation/nav[1]/serviceable") == 1 and selected != nil and standby != nil) {
-	    selected = sprintf("%5.2f", selected);
-	    standby = sprintf("%5.2f", standby);
-	    me.top.getElementById("g4392").hide();
-	    me.top.getElementById("rect3875-6").show();
-	    me.top.getElementById("path4003-0").show();
-	} else {
-	    selected = "---.--";
-	    standby = "---.--";
-	    me.top.getElementById("g4392").show();
-	    me.top.getElementById("rect3875-6");
-	    me.top.getElementById("path4003-0").hide();
-	}
-	me.top.getElementById("text4109-5").setText(selected);
-	me.top.getElementById("text4109-5-2").setText(standby)
-    },
-    updateCOM1: func() {
-	me.top.getElementById("rect3875-6-6-3").hide();
-	me.top.getElementById("path4003-0-4").hide();
-	selected = getprop("instrumentation/comm[0]/frequencies/selected-mhz");
-	standby = getprop("instrumentation/comm[0]/frequencies/standby-mhz");
-	if (getprop("instrumentation/comm[0]/serviceable") == 1 and selected != nil and standby != nil) {
-	    selected = sprintf("%6.3f", selected);
-	    standby = sprintf("%6.3f", standby);
-	    me.top.getElementById("g4375-3").hide();
-	    me.top.getElementById("rect3875-5-2").show();
-	    me.top.getElementById("path4003-6").show();
-	} else {
-	    selected = "---.--";
-	    standby = "---.--";
-	    me.top.getElementById("g4375-3").show();
-	    me.top.getElementById("rect3875-5-2").hide();
-	    me.top.getElementById("path4003-6").hide();
-	}
-	me.top.getElementById("text4109-7-3").setText(selected);
-	me.top.getElementById("text4109-1").setText(standby)
-    },
-    updateCOM2: func() {
-	me.top.getElementById("rect3875-5-2").hide();
-	me.top.getElementById("path4003-6").hide();
-	selected = getprop("instrumentation/comm[1]/frequencies/selected-mhz");
-	standby = getprop("instrumentation/comm[1]/frequencies/standby-mhz");
-	if (getprop("instrumentation/comm[1]/serviceable") == 1 and selected != nil and standby != nil) {
-	    selected = sprintf("%6.3f", selected);
-	    standby = sprintf("%6.3f", standby);
-	    me.top.getElementById("g4427").hide();
-	    me.top.getElementById("rect3875-6-6-3").show();
-	    me.top.getElementById("path4003-0-4").show();
-	} else {
-	    selected = "---.--";
-	    standby = "---.--";
-	    me.top.getElementById("g4427").show();
-	    me.top.getElementById("rect3875-6-6-3").hide();
-	    me.top.getElementById("path4003-0-4").hide();
-	}
-	me.top.getElementById("text4109-5-2-1").setText(selected);
-	me.top.getElementById("text4109-5-9").setText(standby)
-    },
-
 };
 
 var updater = func(){
-    ILS = getprop("instrumentation/nav/gs-needle-deflection-norm")  or 0.00;
     screen1.PFD.updateAi();
     screen1.PFD.updateSpeed();
     screen1.PFD.UpdateHeading();
     screen1.PFD.updateAlt();
     screen1.PFD.updateSlipSkid();
     screen1.PFD.updateVSI();
-    screen1.PFD.updateILS(ILS);
-    settimer(func updater(), 0.05);
+    screen1.PFD.updateGS();
+    screen1.PFD.updateControls();
+    screen1.PFD.updatePerformance();
+    settimer(func updater(), 0.1);
 };
 
 var updaterSlow = func()
@@ -203,4 +166,6 @@ setlistener("/nasal/canvas/loaded", func{
     screen2 = GDU104XINIT.new(2,'MFD');
     updater();
     thread.newthread(updaterSlow);
+    setprop("instrumentation/FarminGDU104X/display-brightness-norm", 0.5);
+    setprop("instrumentation/FarminFG1000/Lightmap", "5");
 }, 1, 0);

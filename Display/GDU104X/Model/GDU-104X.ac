@@ -1303,7 +1303,7 @@ refs 4
 113 0.281805 0.480642
 kids 0
 OBJECT poly
-name "AP.L0"
+name "AP.AP"
 loc 0.0025172 -0.0034111 0.1295635
 texture "FG1000.png"
 texrep 1 1
@@ -3092,7 +3092,7 @@ refs 4
 166 0.185124 0.429812
 kids 0
 OBJECT poly
-name "AP.L1"
+name "AP.FD"
 loc 0.0025172 -0.0141727 0.1291670
 texture "FG1000.png"
 texrep 1 1
@@ -4881,7 +4881,7 @@ refs 4
 166 0.185124 0.369020
 kids 0
 OBJECT poly
-name "AP.L2"
+name "AP.NAV"
 loc 0.0025172 -0.0244813 0.1291670
 texture "FG1000.png"
 texrep 1 1
@@ -6670,7 +6670,7 @@ refs 4
 166 0.185124 0.310786
 kids 0
 OBJECT poly
-name "AP.L3"
+name "AP.ALT"
 loc 0.0025172 -0.0357517 0.1291670
 texture "FG1000.png"
 texrep 1 1
@@ -8459,7 +8459,7 @@ refs 4
 166 0.185124 0.247119
 kids 0
 OBJECT poly
-name "AP.L4"
+name "AP.VS"
 loc 0.0025172 -0.0465134 0.1291670
 texture "FG1000.png"
 texrep 1 1
@@ -10248,7 +10248,7 @@ refs 4
 166 0.185124 0.186326
 kids 0
 OBJECT poly
-name "AP.L5"
+name "AP.FLC"
 loc 0.0025172 -0.0568220 0.1291670
 texture "FG1000.png"
 texrep 1 1
@@ -12037,7 +12037,7 @@ refs 4
 166 0.185124 0.128092
 kids 0
 OBJECT poly
-name "AP.R0"
+name "AP.YD"
 loc 0.0025172 -0.0034111 0.1158320
 texture "FG1000.png"
 texrep 1 1
@@ -13826,7 +13826,7 @@ refs 4
 166 0.260454 0.429812
 kids 0
 OBJECT poly
-name "AP.R1"
+name "AP.HDG"
 loc 0.0025172 -0.0141727 0.1158320
 texture "FG1000.png"
 texrep 1 1
@@ -15615,7 +15615,7 @@ refs 4
 166 0.260454 0.369020
 kids 0
 OBJECT poly
-name "AP.R2"
+name "AP.APR"
 loc 0.0025172 -0.0244813 0.1158320
 texture "FG1000.png"
 texrep 1 1
@@ -17404,7 +17404,7 @@ refs 4
 166 0.260454 0.310786
 kids 0
 OBJECT poly
-name "AP.R3"
+name "AP.VNV"
 loc 0.0025172 -0.0357517 0.1158320
 texture "FG1000.png"
 texrep 1 1
@@ -19193,7 +19193,7 @@ refs 4
 166 0.260454 0.247119
 kids 0
 OBJECT poly
-name "AP.R4"
+name "AP.UP"
 loc 0.0025172 -0.0465134 0.1158320
 texture "FG1000.png"
 texrep 1 1
@@ -20982,7 +20982,7 @@ refs 4
 166 0.260454 0.186326
 kids 0
 OBJECT poly
-name "AP.R5"
+name "AP.DN"
 loc 0.0025172 -0.0568220 0.1158320
 texture "FG1000.png"
 texrep 1 1
@@ -55549,7 +55549,7 @@ refs 3
 187 0.019757 0.898199
 kids 0
 OBJECT poly
-name "SoftKey.B00"
+name "SoftKey.B0"
 loc -0.0000006 -0.0796327 0.0938997
 texture "FG1000.png"
 texrep 1 1
@@ -57338,7 +57338,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B01"
+name "SoftKey.B1"
 loc -0.0000006 -0.0796327 0.0765397
 texture "FG1000.png"
 texrep 1 1
@@ -59127,7 +59127,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B02"
+name "SoftKey.B2"
 loc -0.0000006 -0.0796327 0.0595806
 texture "FG1000.png"
 texrep 1 1
@@ -60916,7 +60916,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B03"
+name "SoftKey.B3"
 loc -0.0000006 -0.0796327 0.0423797
 texture "FG1000.png"
 texrep 1 1
@@ -62705,7 +62705,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B05"
+name "SoftKey.B5"
 loc -0.0000006 -0.0796327 0.0084997
 texture "FG1000.png"
 texrep 1 1
@@ -64494,7 +64494,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B04"
+name "SoftKey.B4"
 loc -0.0000006 -0.0796327 0.0255797
 texture "FG1000.png"
 texrep 1 1
@@ -66283,7 +66283,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B06"
+name "SoftKey.B6"
 loc -0.0000006 -0.0796327 -0.0085803
 texture "FG1000.png"
 texrep 1 1
@@ -68072,7 +68072,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B07"
+name "SoftKey.B7"
 loc -0.0000006 -0.0796327 -0.0259403
 texture "FG1000.png"
 texrep 1 1
@@ -69861,7 +69861,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B08"
+name "SoftKey.B8"
 loc -0.0000006 -0.0796327 -0.0427403
 texture "FG1000.png"
 texrep 1 1
@@ -71650,7 +71650,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B09"
+name "SoftKey.B9"
 loc -0.0000006 -0.0796327 -0.0598203
 texture "FG1000.png"
 texrep 1 1
@@ -73439,7 +73439,7 @@ refs 4
 182 0.348672 0.145888
 kids 0
 OBJECT poly
-name "SoftKey.B10"
+name "SoftKey.BA"
 loc -0.0000006 -0.0796327 -0.0766203
 texture "FG1000.png"
 texrep 1 1
@@ -81784,7 +81784,7 @@ refs 3
 678 0.404770 0.234539
 kids 0
 OBJECT poly
-name "SoftKey.B11"
+name "SoftKey.BB"
 loc -0.0000006 -0.0796327 -0.0937003
 texture "FG1000.png"
 texrep 1 1
