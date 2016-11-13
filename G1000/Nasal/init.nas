@@ -79,7 +79,8 @@ var GDU104XINIT = {
             "NAV1CURSOR", "NAV1SWAP", "NAV2CURSOR", "NAV2SWAP",
             "COM1FREQ", "COM1FAIL", "COM1STANDBY", "COM1SELECTED",
             "COM2FREQ", "COM2FAIL", "COM2STANDBY", "COM2SELECTED",
-            "COM1CURSOR", "COM1SWAP", "COM2CURSOR", "COM2SWAP"]);
+            "COM1CURSOR", "COM1SWAP", "COM2CURSOR", "COM2SWAP",
+            "OATVAL", "LCLVAL", "XPDRVAL", "XPDRMODE"]);
 
         var fmtnav = func(f) sprintf("%6.2f", f);
         var fmtident = func(s) sprintf("%4s", s);
@@ -123,6 +124,17 @@ var GDU104XINIT = {
         setlistener("instrumentation/FarminTemp/com1selected",
             serviceableListener([m.COM1CURSOR, m.COM1SWAP,],
                 [m.COM2CURSOR, m.COM2SWAP], 1, 0));
+
+        setlistener("environment/temperature-degc",
+            textListener(m.OATVAL, func(f) sprintf("%+3.0f°C", f)), 1, 0);
+        setlistener("instrumentation/clock/indicated-string",
+            textListener(m.LCLVAL, nil), 1, 0);
+        setlistener("instrumentation/transponder/id-code",
+            textListener(m.XPDRVAL, func(i) sprintf("%04i", i)), 1, 0);
+        setlistener("instrumentation/transponder/inputs/mode",
+            textListener(m.XPDRMODE, func(mode)
+                ["OFF", "STBY", "TEST", "GND", "ON", "ALT"][mode]), 1, 0);
+
         return m;
     },
 };
