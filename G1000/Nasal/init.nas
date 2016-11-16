@@ -94,6 +94,14 @@ var GDU104XINIT = {
 	        textListener(m.NAV1IDENT, fmtident), 1, 0);
 	    setlistener("instrumentation/nav[0]/in-range",
 	        serviceableListener([m.NAV1IDENT,], []), 1, 0);
+        setlistener("instrumentation/FarminTemp/cdi-display", func(node)
+            if (node.getValue() == "nav1") {
+                m.NAV1SELECTED.setColor(0., 1., 0.);
+                m.NAV1IDENT.setColor(0., 1., 0.);
+            } else {
+                m.NAV1SELECTED.setColor(1., 1., 1.);
+                m.NAV1IDENT.setColor(1., 1., 1.);
+            }, 1, 0);
         setlistener("instrumentation/nav[1]/serviceable",
             serviceableListener([m.NAV2FREQ,], [m.NAV2FAIL,]), 1, 0);
 	    setlistener("instrumentation/nav[1]/frequencies/standby-mhz",
@@ -107,6 +115,14 @@ var GDU104XINIT = {
         setlistener("instrumentation/FarminTemp/nav1selected",
             serviceableListener([m.NAV1CURSOR, m.NAV1SWAP,],
                 [m.NAV2CURSOR, m.NAV2SWAP], 1, 0));
+        setlistener("instrumentation/FarminTemp/cdi-display", func(node)
+            if (node.getValue() == "nav2") {
+                m.NAV2SELECTED.setColor(0., 1., 0.);
+                m.NAV2IDENT.setColor(0., 1., 0.);
+            } else {
+                m.NAV2SELECTED.setColor(1., 1., 1.);
+                m.NAV2IDENT.setColor(1., 1., 1.);
+            }, 1, 0);
 
         var fmtcom = func(f) sprintf("%7.3f", f);
         setlistener("instrumentation/comm[0]/serviceable",
